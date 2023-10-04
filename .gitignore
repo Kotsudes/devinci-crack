@@ -1,0 +1,12 @@
+/.vscode
+
+# Images
+*.png
+*.svg
+*.jpg
+*.jpeg
+*.gif
+*.ico
+
+# SQL
+*.sql
