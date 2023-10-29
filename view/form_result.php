@@ -1,7 +1,7 @@
-<?php 
+<?php
 // var_dump($_POST);
-if(isset($post)){
+if (isset($post)) {
     $username = $post["username"];
-    echo "Welcome, " . $username; 
-}    
+    echo "Welcome, " . $username;
+}
 ?>
