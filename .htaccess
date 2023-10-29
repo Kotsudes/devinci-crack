@@ -1,2 +1,11 @@
+Options +FollowSymLinks  
 RewriteEngine On
-RewriteBase /
+RewriteBase /devinci-cracks
+php_flag magic_quotes_gpc Off
+
+#RewriteRule ^xss/(secure\b|unsecure\b)$ routeur.php?controller=xss&action=xss&secure=$1 [R=301,L]
+RewriteRule ^xss/secure$ routeur.php?controller=xss&action=secure&secure=true
+RewriteRule ^xss/unsecure$ routeur.php?controller=xss&action=unsecure&secure=false
+
+RewriteRule ^csrf/secure$ routeur.php?controller=csrf&action=secure&secure=true
+RewriteRule ^csrf/unsecure$ routeur.php?controller=csrf&action=unsecure&secure=false

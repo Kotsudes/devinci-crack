@@ -15,13 +15,16 @@
         <!--NAVIGATION-->
         <div class="navigation">
           <div class="item text-subheading">Home</div>
-          <div class="item text-subheading">SQL</div>
-          <div class="item text-subheading">XSS</div>
+          <div class="item text-subheading"><a href="sql">SQL</a></div>
+          <div class="item text-subheading"><a href="xss">XSS</a></div>
           <div class="item text-subheading">Form</div>
         </div>
        <!-- FIN NAVIGATION -->
        <span>a</span>
-      <div>
+      </div>
+        <div class="text-subheading">Bienvenue sur le site de Devinci Crack</div>
+        <div class="text-subheading">Vous trouverez ici des failles de sécurité</div>
     </main>
+    <script>setInterval(function(){location.reload(true);}, 10000);</script>
   </body>
 </html>

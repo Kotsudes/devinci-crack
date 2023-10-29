@@ -2,7 +2,9 @@
 
  class controllerHome{
      public static function home(){
-            require_once("view/home.php");
+            $secure = false;
+            if(isset($_GET["secure"])){$secure = $_GET["secure"];}
+            require_once("view/header.php");
         }
   }
 
