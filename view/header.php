@@ -21,6 +21,7 @@
         <div class="item text-subheading"><a href=<?php echo (isset($_GET["secure"])) ? "/devinci-cracks/routeur.php?controller=xss&action=xss&secure=true" : "routeur.php?controller=xss&action=xss&secure=false" ?>>XSS</a></div>
         <div class="item text-subheading"><a href=<?php echo (isset($_GET["secure"])) ? "/devinci-cracks/routeur.php?controller=rfi&action=rfi&secure=true" : "routeur.php?controller=rfi&action=rfi&secure=false" ?>>RFI</a></div>
         <div class="item text-subheading"><a href=<?php echo (isset($_GET["secure"])) ? "/devinci-cracks/routeur.php?controller=csrf&action=csrf&secure=true" : "routeur.php?controller=csrf&action=csrf&secure=false" ?>>CSRF</a></div>
+        <div class="item text-subheading"><a href=<?php echo (isset($_GET["secure"])) ? "/devinci-cracks/routeur.php?controller=hijacking&action=hijacking&secure=true" : "routeur.php?controller=hijacking&action=hijacking&secure=false" ?>>Hijacking</a></div>
       </div>
       <!-- FIN NAVIGATION -->
       <a class="text" href=<?php echo ($secure == "true") ? "/devinci-cracks/routeur.php?controller={$_GET['controller']}&action={$_GET['action']}&secure=false" : "/devinci-cracks/routeur.php?controller={$_GET['controller']}&action={$_GET['action']}&secure=true"; ?>>
