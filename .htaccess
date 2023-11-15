@@ -7,5 +7,8 @@ php_flag magic_quotes_gpc Off
 RewriteRule ^xss/secure$ routeur.php?controller=xss&action=secure&secure=true
 RewriteRule ^xss/unsecure$ routeur.php?controller=xss&action=unsecure&secure=false
 
+RewriteRule ^sql/secure$ routeur.php?controller=sql&action=secure&secure=true
+RewriteRule ^sql/unsecure$ routeur.php?controller=sql&action=unsecure&secure=false
+
 RewriteRule ^csrf/secure$ routeur.php?controller=csrf&action=secure&secure=true
 RewriteRule ^csrf/unsecure$ routeur.php?controller=csrf&action=unsecure&secure=false
