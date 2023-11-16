@@ -9,15 +9,15 @@ class Person
     private $id;
     private $first_name;
     private $last_name;
-    private $age;
+    private $profession;
 
-    public function __construct($id = NULL, $first_name = NULL, $last_name = NULL, $age = NULL)
+    public function __construct($id = NULL, $first_name = NULL, $last_name = NULL, $profession = NULL)
     {
         if (!is_null($first_name)) {
             $this->id = $id;
             $this->first_name = $first_name;
             $this->last_name = $last_name;
-            $this->age = $age;
+            $this->profession = $profession;
         }
     }
 
@@ -33,9 +33,9 @@ class Person
     {
         return $this->last_name;
     }
-    public function getAge()
+    public function getProfession()
     {
-        return $this->age;
+        return $this->profession;
     }
 
 
@@ -51,9 +51,9 @@ class Person
     {
         $this->last_name = $last_name;
     }
-    public function setAge($age)
+    public function setProfession($profession)
     {
-        $this->age = $age;
+        $this->profession = $profession;
     }
 
     public static function getAllUsers()
@@ -97,6 +97,32 @@ class Person
             echo "erreur : " . $e->getMessage() . "<br>";
         }
         return false;
+    }
+
+    public static function insertUser($prenom, $nom, $profession)
+    {
+        $requetePreparee = "INSERT INTO Person VALUES (NULL,:tag_prenom,:tag_nom,:tag_profession)";
+        $req_prep = Connexion::pdo()->prepare($requetePreparee);
+        $valeurs = array("tag_prenom" => $prenom, "tag_nom" => $nom, "tag_profession" => $profession);
+        try {
+            $req_prep->execute($valeurs);
+            return true;
+        } catch (PDOException $e) {
+            echo "erreur : " . $e->getMessage() . "<br>";
+            return false;
+        }
+    }
+
+    public static function insertUserUnsecure($prenom, $nom, $profession)
+    {
+        $requete = "INSERT INTO Person VALUES (NULL,$prenom,$nom,$profession);";
+        try {
+            Connexion::pdo()->query($requete);
+            return true;
+        } catch (PDOException $e) {
+            echo "erreur : " . $e->getMessage() . "<br>";
+            return false;
+        }
     }
 
 }
