@@ -1,75 +1,167 @@
 :root {
-  /* Typography */
-  --text-body: 1rem;
-  /* 18px */
-  --text-subheading: 1.5rem;
-  /* 24px */
-  --text-heading: 2rem;
-  /* 32px */
-  /* Colors */
-  --text: hsl(0, 0%, 100%);
+  --text-body: 18px;
+  --text-subheading: 24px;
+  --text-heading: 32px;
+  --text: hsla(0, 0%, 100%, 1);
   --text-dark: hsl(0, 0%, 0%);
-  --background: hsl(226, 22%, 20%);
-  --primary: hsl(40, 100%, 57%);
-  --secondary: hsl(41, 74%, 9%);
-  --accent: hsl(40, 73%, 49%);
-  /* Borders */
-  --border-standard: 2px solid var(--secondary);
+  --background: hsla(0, 0%, 25%, 1);
+  --background2: hsla(0, 9%, 13%, 1);
+  --background2-30: hsla(0, 9%, 13%, 0.3);
+  --primary: hsla(205, 91%, 75%, 1);
+  --secondary: hsla(0, 0%, 85%, 1);
+  --accent: hsla(0, 60%, 61%, 1);
 }
 
 body {
-  font-size: var(--text-body);
-  color: var(--text);
-  background-color: var(--background);
-  line-height: 1.6;
-  /* Improved readability */
+  padding: 0;
+  margin: 0;
+  background: var(--background, #3f3f3f);
 }
 
-/* Typography with responsive clamps */
-.text-body {
-  font-size: clamp(1rem, 2vw, var(--text-body));
-}
-
-.text-subheading {
-  font-size: clamp(1.5rem, 3vw, var(--text-subheading));
-}
-
-.text-heading {
-  font-size: clamp(2rem, 4vw, var(--text-heading));
-}
-
-.header {
+.container {
   display: flex;
-  /* Simplified with shorthand */
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.container>a {
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+}
+
+.container>a:hover {
+  color: var(--accent);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  background: var(--background2);
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.container>span {
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.container>form {
+  display: flex;
+  padding: 94px 193px;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
+  gap: 30px 0px;
 }
 
-.navigation {
-  display: flex;
-  /* Simplified with shorthand */
-  justify-content: space-around;
-}
-
-.navigation .item {
-  background-color: var(--primary);
-  color: var(--text-dark);
-  padding: 0.375rem 0;
-  /* 6px top and bottom */
+.container>form>label {
+  color: var(--text);
   text-align: center;
-  /* Shorthand border */
-  border: var(--border-standard);
-  transition: background-color 0.3s;
-  /* Smooth transition for hover */
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-/* Improved borders for first and last child */
-.navigation .item:first-child {
-  border-left-width: var(--border-standard);
+.container>form>input[type="text"],
+.container>form>input[type="email"] {
+  width: auto;
+  height: auto;
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: var(--background2-30);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+  padding: 10px 20px;
 }
 
-.navigation .item:last-child {
-  border-right-width: var(--border-standard);
+.container>form>input:focus[type="text"],
+.container>form>input:focus[type="email"] {
+  background: var(--background2);
+  border-color: var(--accent);
+}
+
+.container>form>input[type="submit"] {
+  width: auto;
+  height: auto;
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: var(--background2-30);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+  padding: 10px 20px;
+}
+
+.container>form>input[type="submit"]:hover {
+  color: var(--accent);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  background: var(--background2);
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.container>table {
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container>table>thead {
+  background: var(--background2);
+  font-size: 32px;
+}
+
+.container>table>thead>tr>th {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.container>table>tbody>tr>td {
+  /*fait moi des bordures entre les colones */
+  border: 1px solid black;
+  font-size: 24px;
 }
 
 /* Hover effects for interactive elements */
