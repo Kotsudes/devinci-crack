@@ -1,3 +1,5 @@
+<div class="container">
+    <span>
 <?php 
 // var_dump($_POST);
 if(isset($post)){
@@ -5,3 +7,5 @@ if(isset($post)){
     echo "Welcome, " . $username; 
 }    
 ?>
+</span>
+</div>

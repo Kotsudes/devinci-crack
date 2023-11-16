@@ -1,3 +1,5 @@
+<div class="container">
+    <span>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -7,3 +9,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Email updated successfully for user ID: " . $user_id. " to: " . $email;
 }
 ?>
+    </span>
+</div>
