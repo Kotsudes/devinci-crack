@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Profile Update</title>
 </head>
+
 <body>
 
 <div class="container">
@@ -15,4 +17,5 @@
     </form>
 </div>
 </body>
+
 </html>

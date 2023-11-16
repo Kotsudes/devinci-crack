@@ -12,3 +12,6 @@ RewriteRule ^sql/unsecure$ routeur.php?controller=sql&action=unsecure&secure=fal
 
 RewriteRule ^csrf/secure$ routeur.php?controller=csrf&action=secure&secure=true
 RewriteRule ^csrf/unsecure$ routeur.php?controller=csrf&action=unsecure&secure=false
+
+RewriteRule ^rfi/secure$ routeur.php?controller=rfi&action=secure&secure=true
+RewriteRule ^rfi/unsecure$ routeur.php?controller=rfi&action=unsecure&secure=false

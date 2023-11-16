@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>XSS Simulation Page</title>
 
 </head>
+
 <body>
 
 <div class="container">
@@ -17,4 +19,5 @@
 </div>
 
 </body>
+
 </html>

@@ -1,12 +1,18 @@
-<?php 
+<?php
 require_once("model/Person.php");
 
-class controllerSQL {
-  
+class controllerSQL
+{
+
   // This is the parent of /xss used to show the form
-  public static function sql() {
-    if(isset($_GET["secure"])){$secure = $_GET["secure"];} else {$secure = false;}
-   
+  public static function sql()
+  {
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    } else {
+      $secure = false;
+    }
+
     $users = Person::getAllUsers();
 
     require_once("view/header.php");
@@ -14,9 +20,14 @@ class controllerSQL {
 
   }
 
-  public static function allUser() {
-    if(isset($_GET["secure"])){$secure = $_GET["secure"];} else {$secure = false;}
-   
+  public static function allUser()
+  {
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    } else {
+      $secure = false;
+    }
+
     $users = Person::getAllUsers();
 
     require_once("view/header.php");
@@ -24,29 +35,39 @@ class controllerSQL {
 
   }
 
-  
+
   // These are the childs of /xss used to show the results depending of the
   // security level
-  public static function secure() {
-   if(isset($_GET["secure"])){$secure = $_GET["secure"];} else {$secure = false;}
-   
-      $post = $_POST;
+  public static function secure()
+  {
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    } else {
+      $secure = false;
+    }
 
-      Person::insertUser($post["nom"], $post["prenom"], $post["profession"]);
+    $post = $_POST;
 
-      require_once("view/header.php");
+    Person::insertUser($post["nom"], $post["prenom"], $post["profession"]);
+
+    require_once("view/header.php");
 
 
   }
 
-  public static function unsecure() {
+  public static function unsecure()
+  {
+    $secure = false;
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    } else {
       $secure = false;
-      if(isset($_GET["secure"])){$secure = $_GET["secure"];} else {$secure = false;}
-   
-      $post = $_POST;
-      Person::insertUserUnsecure($post["nom"], $post["prenom"], $post["profession"]);
+    }
 
-      require_once("view/header.php");
+    $post = $_POST;
+    Person::insertUserUnsecure($post["nom"], $post["prenom"], $post["profession"]);
+
+    require_once("view/header.php");
   }
 }
 

@@ -1,20 +1,29 @@
-<?php 
+<?php
 
-class controllerXSS {
+class controllerXSS
+{
 
   // This is the parent of /xss used to show the form
-  public static function xss() {
-    if(isset($_GET["secure"])){$secure = $_GET["secure"];} else {$secure = false;}
-   
+  public static function xss()
+  {
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    } else {
+      $secure = false;
+    }
+
     require_once("view/header.php");
     require_once("view/xss.php");
   }
-  
+
   // These are the childs of /xss used to show the results depending of the
   // security level
-  public static function secure() {
+  public static function secure()
+  {
     $secure = false;
-    if(isset($_GET["secure"])){$secure = $_GET["secure"];}
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    }
     $post = $_POST;
 
     // Convert special characters to HTML entities (to avoid XSS)
@@ -25,9 +34,12 @@ class controllerXSS {
 
   }
 
-  public static function unsecure() {
+  public static function unsecure()
+  {
     $secure = false;
-    if(isset($_GET["secure"])){$secure = $_GET["secure"];}
+    if (isset($_GET["secure"])) {
+      $secure = $_GET["secure"];
+    }
     $post = $_POST;
 
     require_once("view/header.php");

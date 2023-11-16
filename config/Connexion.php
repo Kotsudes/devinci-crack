@@ -1,9 +1,10 @@
 <?php
 
-class Connexion {
+class Connexion
+{
 
 	// attributs
-	static private $hostname = 'localhost';
+	static private $hostname = '127.0.0.1';
 	static private $database = 'cracks';
 	static private $login = 'root';
 	static private $password = '';
@@ -15,22 +16,26 @@ class Connexion {
 	static private $pdo;
 
 	// getter de pdo
-	static public function pdo() {return self ::$pdo;}
+	static public function pdo()
+	{
+		return self::$pdo;
+	}
 
 	// fonction de connexion
-	static public function connect() {
+	static public function connect()
+	{
 		$h = self::$hostname;
 		$d = self::$database;
 		$l = self::$login;
 		$p = self::$password;
 		$t = self::$tabUTF8;
 		try {
-			self::$pdo = new PDO("mysql:host=$h;dbname=$d",$l,$p,$t);
+			self::$pdo = new PDO("mysql:host=$h;dbname=$d", $l, $p, $t);
 			self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch(PDOException $e) {
+		} catch (PDOException $e) {
 			echo "Erreur de connexion !";
 		}
 	}
-	
+
 }
 ?>

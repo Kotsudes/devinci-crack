@@ -1,4 +1,5 @@
 :root {
+
   --text-body: 18px;
   --text-subheading: 24px;
   --text-heading: 32px;
@@ -66,8 +67,6 @@ body {
 
 .container > form {
   display: flex;
-  padding: 94px 193px;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
@@ -161,4 +160,11 @@ body {
   /*fait moi des bordures entre les colones */
   border: 1px solid black;
   font-size: 24px;
+}
+
+/* Hover effects for interactive elements */
+.navigation .item:hover {
+  background-color: var(--accent);
+  cursor: pointer;
+  /* Indicates an interactive element */
 }
