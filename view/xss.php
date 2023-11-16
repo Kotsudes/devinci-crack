@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>XSS Simulation Page</title>
-    <link rel="stylesheet" href="/devinci-cracks/style/xss.css" />
 
 </head>
 <body>
 
-<div class="xss">
+<div class="container">
     <span>Attaque XSS</span>
     <form method="post" action=<?php echo ($secure=="true")? "/devinci-cracks/xss/secure": "/devinci-cracks/xss/unsecure" ?>>
         <label  for="username">Username:</label>
