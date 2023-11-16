@@ -9,7 +9,12 @@
   user-select: none;
 }
 
-.header > .logo {
+.header > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header > a > .logo {
   display: flex;
   width: 680.078px;
   flex-direction: column;
