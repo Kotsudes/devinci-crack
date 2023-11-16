@@ -29,6 +29,31 @@ body {
   flex-shrink: 0;
 }
 
+.container > a {
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+}
+
+.container > a:hover {
+  color: var(--accent);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  background: var(--background2);
+  border-color: var(--accent);
+  border-style: solid;
+}
+
 .container > span {
   color: var(--text);
   text-align: center;
@@ -109,4 +134,31 @@ body {
   background: var(--background2);
   border-color: var(--accent);
   border-style: solid;
+}
+
+.container > table {
+  color: var(--text);
+  text-align: center;
+  font-family: Inter;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.container > table > thead {
+  background: var(--background2);
+  font-size: 32px;
+}
+
+.container > table > thead > tr > th {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.container > table > tbody > tr > td {
+  /*fait moi des bordures entre les colones */
+  border: 1px solid black;
+  font-size: 24px;
 }
