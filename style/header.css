@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: var(--background2-30);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.header > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header > a > .logo {
+  display: flex;
+  width: 680.078px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  color: var(--text, #fff);
+  text-align: center;
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.header .lock {
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+}
+
+.header .menu {
+  display: flex;
+  height: 100px;
+  padding-right: 40px;
+  align-items: center;
+  gap: 15px;
+}
+
+.header .menu .item {
+  color: var(--text, #fff);
+  text-align: center;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 10px 20px;
+}
+
+.header .menu .item:hover {
+  color: var(--accent);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: var(--secondary);
+  border-style: solid;
+  padding: 10px 18px;
+}
+
+.header > .menu a,
+.header > a:hover,
+.header > a:visited,
+.header > a:active {
+  text-decoration: none;
+  color: inherit;
+}
