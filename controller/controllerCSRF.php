@@ -37,6 +37,7 @@ class controllerCSRF
     if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
       // Handle the error - token does not match or not set.
       // Show the header.php in case of error.
+      // If token is invalid, show front page. 
       require_once("view/header.php");
       die('CSRF token validation failed.');
     }
