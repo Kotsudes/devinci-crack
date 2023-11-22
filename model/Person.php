@@ -1,5 +1,6 @@
 <?php
 require_once("config/Connexion.php");
+Connexion::connect();
 // I've commented this line because it would call everytime I refreshed the page
 // making it very slow to work
 // Connexion::connect();

@@ -2,9 +2,8 @@
 
 class Connexion
 {
-
 	// attributs
-	static private $hostname = '127.0.0.1';
+	static private $hostname = 'localhost';
 	static private $database = 'cracks';
 	static private $login = 'root';
 	static private $password = '';

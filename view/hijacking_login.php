@@ -24,13 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <form method="POST" action=<?php echo ($secure == "true") ? "routeur.php?controller=hijacking&action=secure&secure=$secure" : "routeur.php?controller=hijacking&action=unsecure&secure=$secure" ?>>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <span>Attaque Session</span>
+        <form method="POST" action=<?php echo ($secure == "true") ? "routeur.php?controller=hijacking&action=secure&secure=$secure" : "routeur.php?controller=hijacking&action=unsecure&secure=$secure" ?>>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 
 </html>

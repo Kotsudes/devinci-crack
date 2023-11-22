@@ -1,5 +1,4 @@
 :root {
-
   --text-body: 18px;
   --text-subheading: 24px;
   --text-heading: 32px;
@@ -71,6 +70,8 @@ body {
   align-items: center;
   flex-shrink: 0;
   gap: 30px 0px;
+  padding: 94px 193px;
+  flex-direction: column;
 }
 
 .container > form > label {
@@ -84,7 +85,10 @@ body {
 }
 
 .container > form > input[type="text"],
-.container > form > input[type="email"] {
+.container > form > input[type="email"],
+.container > form > input[type="password"],
+.container > form > input[type="submit"],
+.container > form > button {
   width: auto;
   height: auto;
   color: var(--text);
@@ -103,30 +107,16 @@ body {
 }
 
 .container > form > input:focus[type="text"],
-.container > form > input:focus[type="email"] {
+.container > form > input:focus[type="email"],
+.container > form > input:focus[type="password"],
+.container > form > input:focus[type="submit"],
+.container > form > button:focus {
   background: var(--background2);
   border-color: var(--accent);
 }
 
-.container > form > input[type="submit"] {
-  width: auto;
-  height: auto;
-  color: var(--text);
-  text-align: center;
-  font-family: Inter;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  background: var(--background2-30);
-  border-radius: 0.5rem;
-  border-width: 2px;
-  border-color: var(--secondary);
-  border-style: solid;
-  padding: 10px 20px;
-}
-
-.container > form > input[type="submit"]:hover {
+.container > form > input[type="submit"]:hover,
+.container > form > button:hover {
   color: var(--accent);
   border-radius: 0.5rem;
   border-width: 2px;
