@@ -116,7 +116,7 @@ class Person
 
     public static function insertUserUnsecure($prenom, $nom, $profession)
     {
-        $requete = "INSERT INTO Person VALUES (NULL,$prenom,$nom,$profession);";
+        $requete = "INSERT INTO Person VALUES (NULL,'$prenom','$nom','$profession');";
         try {
             Connexion::pdo()->query($requete);
             return true;
