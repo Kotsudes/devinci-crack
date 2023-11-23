@@ -32,8 +32,8 @@
           </a>
         </div>
         <div class="item">
-          <a>
-            <spam>FORM</spam>
+          <a href=<?php echo (isset($_GET["secure"])) ? "/devinci-cracks/routeur.php?controller=hijacking&action=hijacking&secure=true" : "routeur.php?controller=hijacking&action=hijacking&secure=false" ?>>
+            <spam>Session</spam>
           </a>
         </div>
         <div class="item">
@@ -42,8 +42,8 @@
           </a>
         </div>
         <div class="item">
-          <a>
-            <spam>AAA</spam>
+          <a href=<?php echo (isset($_GET["secure"])) ? "/devinci-cracks/routeur.php?controller=rfi&action=rfi&secure=true" : "routeur.php?controller=rfi&action=rfi&secure=false" ?>>
+            <spam>RFI</spam>
           </a>
         </div>
       </div>

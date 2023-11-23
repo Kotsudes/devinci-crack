@@ -1,3 +1,4 @@
+<div class="container">
 <?php
 
 // Check if allow_url_include is enabled
@@ -24,3 +25,4 @@ include('rfi_parse.php');
 // Add any additional logic or code related to rfi_parse.php here
 
 ?>
+</div>
