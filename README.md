@@ -7,6 +7,25 @@ degree in specialization [Cloud Computing & Cybersecurity](https://www.esilv.fr/
 
 The goal was to simulate web vulnerabilities, exploit them and fix them.
 
+## Installation
+
+1. Install [XAMPP](https://www.apachefriends.org/download.html) for Windows.
+2. Clone this repository in the `htdocs` folder of XAMPP.
+3. Import the database in `assets/data.zip` in `mysql/data` of your XAMPP folder (the files inside the zip should be in `mysql/data/` and not like `mysql/data/data/`).
+4. Add in httpd.conf (in `Config` of Apache in XAMPP) the following at the end:
+
+```
+<Directory "PATH_TO_XAMP/htdocs/devinci-cracks">
+    Options Indexes FollowSymLinks Includes ExecCGI
+    AllowOverride All
+    Require all granted
+</Directory>
+
+Alias /devinci PATH_TO_XAMP/htdocs/devinci-cracks
+```
+
+5. Start Apache and MySQL in XAMPP.
+
 ## How to use the attacks
 
 ### XSS (Cross-Site Scripting)
