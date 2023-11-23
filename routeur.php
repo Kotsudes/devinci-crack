@@ -53,6 +53,7 @@ if (isset($_GET["controller"])) {
             break;
         case "home":
             controllerHome::$action();
+            break;
         default:
             break;
     }
