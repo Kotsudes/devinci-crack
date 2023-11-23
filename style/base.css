@@ -18,6 +18,7 @@ body {
   background: var(--background, #3f3f3f);
 }
 
+
 .container {
   display: flex;
   width: 100%;
@@ -28,6 +29,20 @@ body {
   gap: 10px;
   flex-shrink: 0;
 }
+
+.container>h1 {
+  color: var(--text);
+  font-size: var(--text-heading);
+  font-family: Inter;
+  font-weight: 700;
+}
+
+.container>p {
+  color: var(--text);
+  font-size: var(--text-body);
+  font-family: 'Inter', sans-serif;
+}
+
 
 .container>a {
   color: var(--text);
