@@ -10,7 +10,7 @@
 <body>
 
     <div class="container">
-        <span>Attaque XSS</span>
+        <span>XSS Attack</span>
         <form method="post" action=<?php echo ($secure == "true") ? "/devinci-cracks/xss/secure" : "/devinci-cracks/xss/unsecure" ?>>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">

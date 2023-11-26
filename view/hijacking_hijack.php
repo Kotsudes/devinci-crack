@@ -1,13 +1,20 @@
-<?php
-if (isset($_GET['session_id'])) {
-    session_id($_GET['session_id']);
-    session_start();
-    if (isset($_SESSION['user'])) {
-        echo "Hijacked session of user: " . $_SESSION['user'];
-    } else {
-        echo "Failed to hijack session";
-    }
-} else {
-    echo "Please provide a session_id";
-}
-?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hijack Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Hijacked user :
+            <?php echo $_SESSION['user']; ?>
+        </h1>
+        <p>
+            Don't click on silly links...
+        </p>
+    </div>
+</body>
+
+</html>

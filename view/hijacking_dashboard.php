@@ -21,11 +21,11 @@ if (!isset($_SESSION['user'])) {
 
 <body>
     <div class="container">
-        <h1 style="color: var(--text); font-size: var(--text-heading); font-family: Inter; font-weight: 700;">
+        <h1>
             Welcome,
             <?php echo $_SESSION['user']; ?>
         </h1>
-        <p style="color: var(--text); font-size: var(--text-body); font-family: Inter;">
+        <p>
             Your session ID is:
             <?php echo session_id(); ?>
         </p>
