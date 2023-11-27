@@ -1,19 +1,26 @@
-<?php
+<!-- <?php
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+echo "1";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "2";
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($username == 'admin' && $password == 'password') {
-        if (session_status() == PHP_SESSION_NONE)
-            session_start();
+        $_SESSION['user'] = $username;
+        echo "Session user set: " . $_SESSION['user']; // Debugging line
+
         if (!empty($_SESSION['secure'])) {
             session_regenerate_id(true);
         }
-        $_SESSION['user'] = $username;
     } else {
-        echo "Invalid credentials";
+        echo "Wrong username or password";
     }
 }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">

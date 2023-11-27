@@ -7,6 +7,25 @@ degree in specialization [Cloud Computing & Cybersecurity](https://www.esilv.fr/
 
 The goal was to simulate web vulnerabilities, exploit them and fix them.
 
+## Installation
+
+1. Install [XAMPP](https://www.apachefriends.org/download.html) for Windows.
+2. Clone this repository in the `htdocs` folder of XAMPP.
+3. Import the database in `assets/data.zip` in `mysql/data` of your XAMPP folder (the files inside the zip should be in `mysql/data/` and not like `mysql/data/data/`).
+4. Add in httpd.conf (in `Config` of Apache in XAMPP) the following at the end:
+
+```
+<Directory "PATH_TO_XAMP/htdocs/devinci-cracks">
+    Options Indexes FollowSymLinks Includes ExecCGI
+    AllowOverride All
+    Require all granted
+</Directory>
+
+Alias /devinci PATH_TO_XAMP/htdocs/devinci-cracks
+```
+
+5. Start Apache and MySQL in XAMPP.
+
 ## How to use the attacks
 
 ### XSS (Cross-Site Scripting)
@@ -21,14 +40,22 @@ This attack is hard to simulate because it requires either direct access to the 
 
 For the physical access, the way to secure this is to prevent session fixation by changing the session id after the user logs in. This way, if the attacker tries to use the session id he got before the user logged in, it will be invalid.
 
-For the remote access, the way to secure this is to use HTTPS instead of HTTP. This way, the session id will be encrypted and the attacker won't be able to read it. Also, ensuring the IP address and `user agent` of the user doesn't change during the session will prevent session hijacking.
+For the remote access, we strengthen the validation logic for the session id. In secure mode, we generate a random token at login and store it both in the _session_ and in a _HttpOnly cookie_ (Https would also be a way to prevent this attack but it is not implemented in this project).
+Moreover, we add another layer of security by checking the user agent and IP of the request to make sure it is the same as the one that logged in. If it is not, we invalidate the session.
 
 TODO: Polish details
 
-We connect with the following, hardcoded credentials: `admin:password` and we get a session cookie. We can copy this session_id and change the action=secure to action=hijack_page&session_id=SESSION_ID_HERE to get access to page that should belong to the admin.
+We connect with the following, hardcoded credentials: `admin:password` and we get a session id. We can copy this `session_id` and change the action=secure to action=hijack_page&session_id=SESSION_ID_HERE to get access to page that should belong to the admin.
 
-> Example:
+> 🔧 **Example on the same browser on unsecure mode**
 >
 > 1. We login with admin:password and get the session_id `704dr47i820bmo7a2u3856374a`.
->
 > 2. We then change the URL from `https://localhost/devinci-cracks/routeur.php?controller=hijacking&action=secure&secure=true` to `https://localhost/devinci-cracks/routeur.php?controller=hijacking&action=hijack_page&secure=true&session_id=704dr47i820bmo7a2u3856374a` and we get access to the admin page.
+
+> 🔧 **Example on two browsers on unsecure mode**
+>
+> 1. We open two browsers, browser A (Edge) and browser B (Firefox).
+> 2. We login with admin:password on browser A and get the session_id `704dr47i820bmo7a2u3856374a`.
+> 3. We then change the URL from `https://localhost/devinci-cracks/routeur.php?controller=hijacking&action=secure&secure=false` to `https://localhost/devinci-cracks/routeur.php?controller=hijacking&action=hijack_page&secure=false&session_id=704dr47i820bmo7a2u3856374a` on browser B and we get access to the admin page.
+>
+> _NOTE: in secure mode, it wouldn't work because the session_id would be different and thus invalid._

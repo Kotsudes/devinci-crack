@@ -8,6 +8,7 @@ class controllerHome
     $secure = isset($_GET["secure"]) ? $_GET["secure"] : false;
 
     require_once("view/header.php");
+
   }
 }
 
