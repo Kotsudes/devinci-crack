@@ -14,7 +14,7 @@
     <header>
       <div class="header">
         <a href="/devinci-cracks/routeur.php?controller=home&action=home&secure=true">
-          <spam class="logo">Devinci Cracks</spam>
+          <img class="logo" src="/devinci-cracks/assets/logo.png"/>
         </a>
         <a href=<?php echo ($secure == "true") ? "/devinci-cracks/routeur.php?controller={$_GET['controller']}&action={$_GET['action']}&secure=false" : "/devinci-cracks/routeur.php?controller={$_GET['controller']}&action={$_GET['action']}&secure=true"; ?>>
           <img class="lock" src=<?php echo ($secure == "true")? "/devinci-cracks/assets/lock.svg" : "/devinci-cracks/assets/unlock.svg"; ?> alt="logo" />

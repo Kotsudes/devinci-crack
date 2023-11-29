@@ -16,7 +16,8 @@
 
 .header > a > .logo {
   display: flex;
-  width: 680.078px;
+  height: 75px;
+  padding-left: 80px;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
