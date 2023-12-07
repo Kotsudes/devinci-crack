@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <span>Attaque CSRF</span>
+        <span>CSRF Attack</span>
         <form method="POST" action=<?php echo ($secure == "true") ? "/devinci-cracks/csrf/secure" : "/devinci-cracks/csrf/unsecure" ?>>
             <label for="email">New Email:</label>
             <input type="email" id="email" name="email">

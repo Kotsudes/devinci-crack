@@ -11,7 +11,7 @@ The goal was to simulate web vulnerabilities, exploit them and fix them.
 
 1. Install [XAMPP](https://www.apachefriends.org/download.html) for Windows.
 2. Clone this repository in the `htdocs` folder of XAMPP.
-3. Import the database in `data.zip` in `mysql/data` (the files inside the zip should be in `mysql/data/` and not like `mysql/data/data/`).
+3. Import the database in `assets/data.zip` in `mysql/data` of your XAMPP folder (the files inside the zip should be in `mysql/data/` and not like `mysql/data/data/`).
 4. Add in httpd.conf (in `Config` of Apache in XAMPP) the following at the end:
 
 ```
@@ -30,8 +30,6 @@ Alias /devinci PATH_TO_XAMP/htdocs/devinci-cracks
 
 ### XSS (Cross-Site Scripting)
 
-TODO: Polish details
-
 We go on the XSS tab and click on "Go to unsecure" to go on the vulnerable version of the website, then in the form type `<scipt>alert("XSS attack!")</script>` and click on "Send" to see the alert pop up.
 
 ### Session Hijacking
@@ -42,8 +40,6 @@ For the physical access, the way to secure this is to prevent session fixation b
 
 For the remote access, we strengthen the validation logic for the session id. In secure mode, we generate a random token at login and store it both in the _session_ and in a _HttpOnly cookie_ (Https would also be a way to prevent this attack but it is not implemented in this project).
 Moreover, we add another layer of security by checking the user agent and IP of the request to make sure it is the same as the one that logged in. If it is not, we invalidate the session.
-
-TODO: Polish details
 
 We connect with the following, hardcoded credentials: `admin:password` and we get a session id. We can copy this `session_id` and change the action=secure to action=hijack_page&session_id=SESSION_ID_HERE to get access to page that should belong to the admin.
 

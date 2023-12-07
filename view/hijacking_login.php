@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container">
-        <span>Attaque Session</span>
+        <span>Session Fixation Attack</span>
         <form method="POST" action=<?php echo ($secure == "true") ? "routeur.php?controller=hijacking&action=secure&secure=$secure" : "routeur.php?controller=hijacking&action=unsecure&secure=$secure" ?>>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">
