@@ -29,7 +29,7 @@ class controllerRFI
         $secure = isset($_GET["secure"]) ? $_GET["secure"] : false;
 
         require_once("view/header.php");
-        require_once("view/rfi_unsecure.php");
+        require_once("view/rfi_secure.php");
     }
 }
 
